@@ -4,7 +4,9 @@ const fs = require('fs');
 const path = require('path');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+
+
 
 // Middleware to serve static files (HTML, CSS, JS)
 app.use(express.static('public'));
@@ -36,4 +38,5 @@ app.post('/login', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
-const PORT = process.env.PORT || 3000;
+
+
